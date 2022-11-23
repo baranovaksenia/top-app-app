@@ -2,10 +2,12 @@ import cn from 'classnames'
 
 import styles from './Button.module.css'
 import { ButtonProps } from './Button.props'
+import ArrowIcon from './arrow.svg'
 
 // вытаскиваем пропсы явно, остальные помещаем в переменную props (onClick...)
 const Button = ({
 	appearance,
+	arrow = 'none',
 	children,
 	className,
 	...props
@@ -19,6 +21,15 @@ const Button = ({
 			{...props}
 		>
 			{children}
+			{arrow != 'none' && (
+				<span
+					className={cn(styles.arrow, {
+						[styles.down]: arrow == 'down',
+					})}
+				>
+					<ArrowIcon />
+				</span>
+			)}
 		</button>
 	)
 }
