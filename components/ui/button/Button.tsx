@@ -21,10 +21,10 @@ const Button = ({
 			{...props}
 		>
 			{children}
-			{arrow != 'none' && (
+			{arrow !== 'none' && (
 				<span
 					className={cn(styles.arrow, {
-						[styles.down]: arrow == 'down',
+						[styles.down]: arrow === 'down',
 					})}
 				>
 					<ArrowIcon />

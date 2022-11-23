@@ -1,7 +1,7 @@
 import styles from './Htag.module.css'
 import { HTagProps } from './Htag.props'
 
-export const HTag = ({ tag, children }: HTagProps): JSX.Element => {
+const HTag = ({ tag, children }: HTagProps): JSX.Element => {
 	switch (tag) {
 		case 'h1':
 			return <h1 className={styles.h1}>{children}</h1>
